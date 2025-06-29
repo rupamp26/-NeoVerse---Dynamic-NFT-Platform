@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 dark:from-slate-900 dark:via-slate-800 dark:to-indigo-900;
+    @apply text-slate-900 dark:text-slate-100;
+    @apply font-sans antialiased;
+    @apply transition-colors duration-300;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .glass-effect {
+    @apply bg-white/10 dark:bg-black/10 backdrop-blur-md border border-white/20 dark:border-white/10;
+  }
+
+  .glass-card {
+    @apply glass-effect rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700;
+    @apply text-white font-medium px-6 py-3 rounded-xl shadow-lg hover:shadow-xl;
+    @apply transform hover:scale-105 active:scale-95 transition-all duration-200;
+    @apply focus:outline-none focus:ring-4 focus:ring-primary-500/30;
+  }
+
+  .btn-secondary {
+    @apply bg-white/20 dark:bg-black/20 backdrop-blur-sm border border-white/30 dark:border-white/10;
+    @apply text-slate-700 dark:text-slate-300 font-medium px-6 py-3 rounded-xl;
+    @apply hover:bg-white/30 dark:hover:bg-black/30 transition-all duration-200;
+    @apply focus:outline-none focus:ring-4 focus:ring-slate-500/30;
+  }
+
+  .nft-card {
+    @apply glass-card cursor-pointer transform hover:scale-105 hover:-translate-y-2;
+    @apply transition-all duration-300 ease-out;
+  }
+
+  .nft-card:hover {
+    @apply shadow-2xl shadow-primary-500/20;
+  }
+
+  .evolution-pulse {
+    @apply animate-pulse-soft;
+    background: linear-gradient(45deg, rgba(59, 130, 246, 0.1), rgba(168, 85, 247, 0.1));
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent;
+  }
+
+  .sidebar-nav {
+    @apply flex items-center space-x-3 px-4 py-3 rounded-xl text-slate-600 dark:text-slate-400;
+    @apply hover:bg-white/20 dark:hover:bg-black/20 hover:text-slate-900 dark:hover:text-slate-100;
+    @apply transition-all duration-200;
+  }
+
+  .sidebar-nav.active {
+    @apply bg-gradient-to-r from-primary-500/20 to-secondary-500/20 text-primary-700 dark:text-primary-300;
+    @apply border border-primary-500/30;
+  }
+
+  .loading-skeleton {
+    @apply animate-pulse bg-gradient-to-r from-slate-200 via-slate-300 to-slate-200 dark:from-slate-700 dark:via-slate-600 dark:to-slate-700;
+    background-size: 200% 100%;
+    animation: loading-wave 1.5s ease-in-out infinite;
+  }
+
+  @keyframes loading-wave {
+    0% {
+      background-position: 200% 0;
+    }
+    100% {
+      background-position: -200% 0;
+    }
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+
+  .rotate-y-12 {
+    transform: rotateY(12deg);
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100 dark:bg-slate-800 rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 dark:bg-slate-600 rounded-full hover:bg-slate-400 dark:hover:bg-slate-500;
+}
