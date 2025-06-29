@@ -1,1 +1,1 @@
-# -NeoVerse---Dynamic-NFT-Platform
+# NeoVerse-Dynamic NFT Platform
